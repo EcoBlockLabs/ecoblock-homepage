@@ -1,1 +1,27 @@
-{}
+{
+  "eth_scaling_solution": "Ethereum scaling solution",
+  "intro_eco": "EcoBlock is a ultra-low costs, high security and lightning-fast Ethereum L2 blockchain",
+  "build_your_app": "Build your app",
+  "bridge_to_eco": "Bridge to EcoBlock",
+  "what_is": "What is EcoBlock?",
+  "eco_layer": "EcoBlock is a layer-2 network that enables Ethereum to scale securely with ultra-low transaction fees through a new security model that relies on a Data Availability Committee (DAC).",
+  "ultra_low_costs": "Ultra-low Costs",
+  "high_throughput": "High Throughput",
+  "security_of_ethereum": "Security of Ethereum",
+  "evm_compatibility": "EVM Compatibility",
+  "explore_eco": "Explore EcoBlock",
+  "explore_eco_layer": "EcoBlock is a layer-2 network that enables Ethereum to scale securely with ultra-low transaction fees through a new security model that relies on a Data Availability Committee (DAC).",
+  "explore_utral": "EcoBlock is a layer-2 network that enables Ethereum to scale securely with ultra-low transaction fees through a new security model that relies on a Data Availability Committee (DAC).",
+  "explore_high": "Due to transactions being processed off-chain on EcoBlock, it results in higher transaction speed and faster confirmation time.",
+  "explore_security": "EcoBlock is a layer-2 network that enables Ethereum to scale securely with ultra-low transaction fees through a new security model that relies on a Data Availability Committee (DAC).",
+  "explore_evm": "EcoBlock is compatible with the EVM to the byte code level, which enables developers build Ethereum apps quickly without surprises",
+  "get_starts": "Get Started",
+  "bridge": "Bridge",
+  "faq": "FAQ",
+  "content_start": "Everything you need to get started building on EcoBlock, all in one place.",
+  "content_bridge": "Bridges allow users to deposit or withdraw assets between EcoBlock and Ethereum",
+  "content_faq": "Checkout the Frequently Asked Questions to understand more about EcoBlock.",
+  "view_docs": "VIEW DOCS",
+  "eco_tile": "Explore EcoBlock",
+  "eco_des": "Browse through resources that can help you build on the latest EcoBlock chain."
+}

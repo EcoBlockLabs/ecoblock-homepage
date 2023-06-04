@@ -1,30 +1,28 @@
 import Image from 'next/image';
+import useTranslation from 'next-translate/useTranslation';
 
 const ChooseEcoBlock: React.FC = () => {
+  const { t } = useTranslation('home');
   const items = [
     {
-      name: 'Ultra-low Costs',
+      name: 'ultra_low_costs',
       image: 'ultra_low_costs',
-      content:
-        'EcoBlock is a layer-2 network that enables Ethereum to scale securely with ultra-low transaction fees through a new security model that relies on a Data Availability Committee (DAC).',
+      content: 'explore_utral',
     },
     {
-      name: 'High Throughput',
+      name: 'high_throughput',
       image: 'high_throughput',
-      content:
-        'Due to transactions being processed off-chain on EcoBlock, it results in higher transaction speed and faster confirmation time.',
+      content: 'explore_high',
     },
     {
-      name: 'Security of Ethereum',
+      name: 'security_of_ethereum',
       image: 'security_of_ethereum',
-      content:
-        'EcoBlock is a layer-2 network that enables Ethereum to scale securely with ultra-low transaction fees through a new security model that relies on a Data Availability Committee (DAC).',
+      content: 'explore_security',
     },
     {
-      name: 'EVM Compatibility',
+      name: 'evm_compatibility',
       image: 'evm_compatibility',
-      content:
-        'EcoBlock is compatible with the EVM to the byte code level, which enables developers build Ethereum apps quickly without surprises',
+      content: 'explore_evm',
     },
   ];
   return (
@@ -38,13 +36,11 @@ const ChooseEcoBlock: React.FC = () => {
             height={24}
           />
           <div className="flex font-Antonio text-4xl text-white">
-            Explore EcoBlock
+            {t('explore_eco')}
           </div>
         </div>
         <div className="flex w-full justify-center font-Inter text-xl text-primary-200 font-light">
-          EcoBlock is a layer-2 network that enables Ethereum to scale securely
-          with ultra-low transaction fees through a new security model that
-          relies on a Data Availability Committee (DAC).
+          {t('explore_eco_layer')}
         </div>
       </div>
       <div className="flex justify-center mt-[38px] ">
@@ -56,9 +52,11 @@ const ChooseEcoBlock: React.FC = () => {
             >
               <img src={`/assets/images/${e.image}.svg`} alt="icon" />
               <div className="title text-white font-Antonio my-[20px]">
-                {e.name}
+                {t(e.name)}
               </div>
-              <div className="content font-Inter font-light">{e.content}</div>
+              <div className="content font-Inter font-light">
+                {t(e.content)}
+              </div>
             </div>
           );
         })}

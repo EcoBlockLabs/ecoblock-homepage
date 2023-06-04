@@ -1,30 +1,30 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import useTranslation from 'next-translate/useTranslation';
 
 const ExploreEcoBlock: React.FC = () => {
   const exploreItems = [
     {
       image: 'get_starts',
-      title: 'Get Started',
-      content:
-        'Everything you need to get started building on EcoBlock, all in one place.',
+      title: 'get_starts',
+      content: 'content_start',
       link: '',
     },
     {
       image: 'ex_bridge',
-      title: 'Bridge',
-      content:
-        'Bridges allow users to deposit or withdraw assets between EcoBlock and Ethereum',
+      title: 'bridge',
+      content: 'content_bridge',
       link: '',
     },
     {
       image: 'ex_faq',
-      title: 'FAQ',
-      content:
-        'Checkout the Frequently Asked Questions to understand more about EcoBlock.',
+      title: 'faq',
+      content: 'content_faq',
       link: '',
     },
   ];
+  const { t } = useTranslation('home');
+
   return (
     <div className="flex w-full h-[100%] items-center justify-between flex-row-reverse max-md:justify-end max-md:flex-col">
       <div className="flex w-[40%] max-md:w-full flex-col items-start justify-start space-y-4">
@@ -38,11 +38,10 @@ const ExploreEcoBlock: React.FC = () => {
           />
         </div>
         <div className="flex font-Antonio max-md:justify-center max-md:w-full text-[36px] text-white max-sm:text-[24px]">
-          Explore EcoBlock
+          {t('eco_tile')}
         </div>
         <div className="flex font-Inter max-md:justify-center max-md:w-full text-[20px] max-md:text-[14px] text-primary-200 font-light max-w-[600px]">
-          Browse through resources that can help you build on the latest
-          EcoBlock chain.
+          {t('eco_des')}
         </div>
       </div>
       <div className="w-[60%] max-md:w-full justify-center">
@@ -62,13 +61,13 @@ const ExploreEcoBlock: React.FC = () => {
               </div>
               <div>
                 <div className="font-Antonio text-[24px] max-md:text-[18px] text-white">
-                  {e.title}
+                  {t(e.title)}
                 </div>
-                <div className="flex font-Inter text-[16px] max-md:text-[14px] max-md:justify-center  text-primary-200 font-light max-w-[600px] my-[10px]">
-                  {e.content}
+                <div className="flex font-Inter text-[16px] max-md:text-[14px] max-md:justify-center  text-primary-200 font-light max-w-[600px] max-md:w-[100%] my-[10px]">
+                  {t(e.content)}
                 </div>
                 <div className="text-purple-400 font-normal	font-Inter text-[16px]">
-                  <Link href={e.link}>VIEW DOCS</Link>
+                  <Link href={e.link}>{t('view_docs')}</Link>
                 </div>
               </div>
             </div>

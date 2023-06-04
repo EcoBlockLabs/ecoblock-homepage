@@ -39,6 +39,7 @@ const SreenMobile = () => {
             overflow-y: scroll;
             height: 100vh;
             padding: 0 20px;
+            z-index: 99;
           }
           .header {
             backdrop-filter: blur(50px) !important;
