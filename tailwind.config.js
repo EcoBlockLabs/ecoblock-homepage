@@ -38,6 +38,9 @@ module.exports = {
           800: '#2d3748',
           900: '#1a202c',
         },
+        purple: {
+          400: '#C2B6F5',
+        },
       },
       lineHeight: {
         hero: '4.5rem',

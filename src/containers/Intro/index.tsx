@@ -2,23 +2,25 @@ import Image from 'next/image';
 
 const Intro: React.FC = () => {
   return (
-    <div className="flex w-full min-h-[95%] h-[95vh] items-center justify-between">
-      <div className="flex w-full flex-col items-start justify-start space-y-4">
-        <Image
-          src="/assets/images/icons/triagle.svg"
-          alt="icon"
-          width={24}
-          height={24}
-        />
-        <div className="flex font-Antonio text-4xl text-white">
+    <div className="flex w-full min-h-[95%] h-[95vh] max-xl:w-fit max-xl:flex-col-reverse max-xl:justify-center items-center justify-between">
+      <div className="flex w-full flex-col items-start justify-start space-y-4 max-xl:mt-12">
+        <div className="flex max-md:w-full max-md:justify-center">
+          <Image
+            src="/assets/images/icons/triagle.svg"
+            alt="icon"
+            width={24}
+            height={24}
+          />
+        </div>
+        <div className="flex font-Antonio text-[36px] text-white max-sm:text-[24px] max-md:w-full max-md:justify-center">
           Ethereum scaling solution
         </div>
-        <div className="flex font-Inter text-xl text-primary-200 font-light max-w-[600px]">
+        <div className="flex font-Inter text-[20px] max-sm:text-[14px] text-primary-200 font-light max-md:w-full max-md:text-center max-w-[600px]">
           EcoBlock is a ultra-low costs, high security and lightning-fast
           Ethereum L2 blockchain
         </div>
-        <div className="flex pt-5 gap-4 flex-row">
-          <button className="primary-button flex font-Poppins gap-2 text-[#FFFEFE] bg-primary-300 rounded-xl py-3 px-5">
+        <div className="flex pt-5 gap-4 flex-row max-md:flex-col max-md:w-full">
+          <button className="primary-button max-md:justify-center  flex font-Poppins gap-2 text-[#FFFEFE] bg-primary-300 rounded-xl py-3 px-5">
             Build your app{' '}
             <svg
               width="24"
@@ -43,7 +45,7 @@ const Intro: React.FC = () => {
               />
             </svg>
           </button>
-          <button className="secondary-button flex font-Poppins gap-2 text-primary-300 bg-white rounded-xl py-3 px-5">
+          <button className="secondary-button max-md:justify-center flex font-Poppins gap-2 text-primary-300 bg-white rounded-xl py-3 px-5">
             Bridge to EcoBlock{' '}
             <svg
               xmlns="http://www.w3.org/2000/svg"

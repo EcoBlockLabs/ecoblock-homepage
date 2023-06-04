@@ -15,7 +15,7 @@ const Header: React.FC = () => {
   const { lang } = useTranslation();
 
   return (
-    <div className="w-full mb-6 fixed top-10 pr-[12%] flex gap-3 justify-between">
+    <div className="w-full pb-6 z-50 sticky pt-[44px] pl-[70px] pr-[220px] max-lg:pr-[70px] max-md:px-[16px] flex gap-3 justify-between">
       <div className="flex gap-4">
         {/* logo */}
         <Image
