@@ -1,0 +1,201 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.primary-button {
+  @apply bg-primary-300 font-normal border-solid border-2 border-primary-300 text-white py-3 px-5 rounded-xl;
+}
+
+.primary-button:hover {
+  @apply bg-white text-primary-300 font-normal border-solid border-2 border-primary-300;
+}
+
+.secondary-button {
+  @apply bg-white font-normal border-solid border-2 border-white text-primary-300 py-3 px-5 rounded-xl;
+}
+
+.secondary-button:hover {
+  @apply bg-primary-300 text-white font-normal border-solid border-2 border-primary-300;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: default;
+}
+#container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-right: 151px;
+  height: 100%;
+}
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  padding: 0 60px;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+.first-page {
+  height: 100vh;
+  min-height: 100vh;
+}
+.second-page {
+  height: 100vh;
+  min-height: 100vh;
+}
+.third-page {
+  height: 100vh;
+  min-height: 100vh;
+}
+.fourth-page {
+  height: 100vh;
+  min-height: 100vh;
+}
+
+.five-page {
+  height: 100vh;
+  min-height: 100vh;
+}
+
+.prev {
+  z-index: 9;
+  top: 50px;
+  width: 100%;
+}
+.next {
+  width: 100%;
+  z-index: 9;
+  bottom: 00px;
+}
+.fixed-button {
+  position: fixed;
+}
+
+.arrow-right {
+  width: 0px;
+  height: 0px;
+  border-bottom: 16px solid transparent;
+  border-top: 16px solid transparent;
+  border-left: 16px solid #2f2f2f; /* Tam giác trái được đổ màu */
+}
+
+.zoom {
+  background-color: rgba(64, 116, 207, 0.2);
+  backdrop-filter: blur(50px);
+  transition: transform 0.2s;
+  color: #f2f2f2;
+  width: 340px;
+  padding: 60px 50px;
+}
+
+.zoom img {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.content {
+  font-size: 14px;
+}
+
+.zoom:hover {
+  background-color: linear-gradient(
+    154.56deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.08) 30.73%,
+    rgba(255, 255, 255, 0.2) 72.92%,
+    rgba(255, 255, 255, 0.2) 99.48%
+  );
+  z-index: 1;
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
+}
+
+.zoom:hover img {
+  width: 120px;
+  height: 120px;
+}
+
+.zoom:hover .title {
+  font-size: 30px;
+}
+
+.zoom:hover .content {
+  font-size: 16px;
+}
+
+.divider {
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 30px;
+  text-align: end;
+  color: white;
+  margin-bottom: 47px;
+}
+
+.headline::after{
+  content: "";
+  margin: 25px 0 50px 0;
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: #0071B9;
+  border-radius: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)); 
+}
+
+@media (max-width: 1024px) {
+  #container {
+    padding-right: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 0 20px;
+  }
+  .first-page {
+    height: 100%;
+    min-height: 100%;
+  }
+  .second-page {
+    height: 100%;
+    min-height: 100%;
+  }
+  .third-page {
+    height: 100%;
+    min-height: 100%;
+  }
+  .fourth-page {
+    height: 100%;
+    min-height: 100%;
+  }
+  
+  .five-page {
+    height: 100%;
+    min-height: 100%;
+  }
+  #container {
+    height: 100vh;
+    overflow-y: scroll;
+  }
+}
