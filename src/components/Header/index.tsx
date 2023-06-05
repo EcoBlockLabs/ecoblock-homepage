@@ -17,7 +17,6 @@ const Header: React.FC = () => {
   return (
     <div className="w-full pb-6 z-50 sticky pt-[44px] pl-[70px] pr-[220px] max-lg:pr-[70px] max-md:px-[16px] flex gap-3 justify-between">
       <div className="flex gap-4">
-        {/* logo */}
         <Image
           src="/assets/images/white-logo.svg"
           alt="logo"
@@ -52,7 +51,7 @@ const Header: React.FC = () => {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="menu-translate absolute left-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+            <Menu.Items className="menu-translate font-Inter font-normal absolute left-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
               <div className="py-1">
                 <Menu.Item>
                   {({ active }) => (
@@ -127,8 +126,8 @@ const Header: React.FC = () => {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-              <div className="py-1">
+            <Menu.Items className="absolute right-0  z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+              <div className="py-1 font-Inter font-normal ">
                 <Menu.Item>
                   {({ active }) => (
                     <button

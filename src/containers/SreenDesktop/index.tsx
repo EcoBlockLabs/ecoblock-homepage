@@ -45,11 +45,10 @@ const SreenDesktop = () => {
             newCurrentPage -= 1;
           }
 
-          if (newCurrentPage !== currentPage) {
-            setCurrentPage(newCurrentPage);
-          }
-
           setTimeout(() => {
+            if (newCurrentPage !== currentPage) {
+              setCurrentPage(newCurrentPage);
+            }
             setIsScrolling(false);
           }, 500);
         }
@@ -88,20 +87,19 @@ const SreenDesktop = () => {
           <div className="page second-page ">
             <About />
           </div>
-          <div className="page third-page">
+          <div className="page third-page  ">
             <ChooseEcoBlock />
           </div>
-          <div className="page fourth-page">
+          <div className="page fourth-page ">
             <ExploreEcoBlock />
           </div>
-          <div className="page five-page">
+          <div className="page five-page  ">
             <Footer />
           </div>
         </div>
         {currentPage > 0 && (
           <button
-            className="prev max-md:hidden fixed-button font-
-          Antonio font-[18px] font-thin text-white"
+            className="prev max-md:hidden fixed-button font-Antonio font-[18px] font-thin text-white"
             onClick={goToPreviousPage}
           >
             <Image
@@ -114,8 +112,7 @@ const SreenDesktop = () => {
         )}
         {currentPage !== 4 && (
           <button
-            className="next z-40 fixed-button font-
-          Antonio font-[18px] font-thin text-white"
+            className="next z-40 fixed-button font-Antonio font-[18px] font-thin text-white"
             onClick={goToNextPage}
           >
             <div>{currentPage === 3 ? 'About Us' : 'What is EcoBlock?'}</div>

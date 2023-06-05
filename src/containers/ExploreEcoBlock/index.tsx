@@ -1,6 +1,6 @@
+import useTranslation from 'next-translate/useTranslation';
 import Image from 'next/image';
 import Link from 'next/link';
-import useTranslation from 'next-translate/useTranslation';
 
 const ExploreEcoBlock: React.FC = () => {
   const exploreItems = [
@@ -37,7 +37,7 @@ const ExploreEcoBlock: React.FC = () => {
             height={24}
           />
         </div>
-        <div className="flex font-Antonio max-md:justify-center max-md:w-full text-[36px] text-white max-sm:text-[24px]">
+        <div className="flex font-Antonio font-light max-md:justify-center max-md:w-full text-[36px] text-white max-sm:text-[24px]">
           {t('eco_tile')}
         </div>
         <div className="flex font-Inter max-md:justify-center max-md:w-full text-[20px] max-md:text-[14px] text-primary-200 font-light max-w-[600px]">

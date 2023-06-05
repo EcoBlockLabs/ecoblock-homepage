@@ -3,6 +3,7 @@ import useTranslation from 'next-translate/useTranslation';
 
 const ChooseEcoBlock: React.FC = () => {
   const { t } = useTranslation('home');
+
   const items = [
     {
       name: 'ultra_low_costs',
@@ -35,7 +36,7 @@ const ChooseEcoBlock: React.FC = () => {
             width={24}
             height={24}
           />
-          <div className="flex font-Antonio text-4xl text-white">
+          <div className="flex font-Antonio font-light text-4xl text-white">
             {t('explore_eco')}
           </div>
         </div>
@@ -43,12 +44,12 @@ const ChooseEcoBlock: React.FC = () => {
           {t('explore_eco_layer')}
         </div>
       </div>
-      <div className="flex justify-center mt-[38px] ">
+      <div className="flex justify-start pt-[38px] overflow-x-scroll cs-scroll">
         {items.map((e, index) => {
           return (
             <div
               key={index}
-              className="w-full bg-primary-200 w-[20%] zoom text-center min-w-[298px]"
+              className=" w-full bg-primary-200 zoom text-center min-w-[300px]"
             >
               <img src={`/assets/images/${e.image}.svg`} alt="icon" />
               <div className="title text-white font-Antonio my-[20px]">
