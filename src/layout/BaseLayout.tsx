@@ -53,14 +53,14 @@ const BaseLayout: React.FC<LayoutProps> = ({
   };
   return (
     <>
-      <div className="flex w-full min-h-[100vh] overflow-hidden">
-        <div className="main  w-[100%] min-h-[100vh] bg-no-repeat bg-cover">
+      <div className="main bg-no-repeat bg-cover flex w-full min-h-[100vh] overflow-hidden relative justify-center">
+        <div className="w-[100%] min-h-[100vh] bg-no-repeat bg-cover container">
           <Header />
-          <div className="flex w-full flex-col min-h-[100%] overflow-y-auto">
+          <div className="flex w-full flex-col min-h-[100%] container relative">
             <div>{children}</div>
           </div>
         </div>
-        <div className="navigator max-lg:hidden flex flex-col justify-center fixed top-0 right-0 min-h-[100vh] w-[151px] pr-4 space-y-10">
+        <div className="navigator max absolute max-lg:hidden flex flex-col justify-center fixed top-0 right-0 min-h-[100vh] w-[151px] pr-4 space-y-10">
           {listMenu.map((item) => (
             <div
               key={item.link}

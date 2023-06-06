@@ -28,6 +28,10 @@ body {
   font-size: 18px;
   cursor: default;
 }
+
+/* .container{
+  max-width:1536px !important;
+} */
 #container {
   display: flex;
   flex-direction: column;
@@ -36,8 +40,9 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding-right: 151px;
+  padding-right: 140px;
   height: 100%;
+  overflow-y: clip;
 }
 .page {
   display: flex;
@@ -45,7 +50,7 @@ body {
   align-items: center;
   position: relative;
   width: 100%;
-  padding: 0 60px;
+  /* padding: 0 60px; */
   box-sizing: border-box;
   background-color: transparent;
 }
@@ -58,7 +63,7 @@ body {
   min-height: 100vh;
 }
 .third-page {
-  height: 100vh;
+  height: 100%;
   min-height: 100vh;
 }
 .fourth-page {
@@ -72,8 +77,8 @@ body {
 }
 
 .prev {
-  z-index: 9;
-  top: 50px;
+  z-index: 999;
+  top: 70px;
   width: 100%;
 }
 .next {
@@ -96,10 +101,11 @@ body {
 .zoom {
   background-color: rgba(64, 116, 207, 0.2);
   backdrop-filter: blur(50px);
-  transition: transform 0.2s;
+  transition: transform 0.7s;
   color: #f2f2f2;
-  width: 340px;
+  height: 423px;
   padding: 60px 50px;
+  transform-origin: center bottom;
 }
 
 .zoom img {
@@ -117,17 +123,14 @@ body {
 }
 
 .zoom:hover {
-  background-color: linear-gradient(
-    154.56deg,
-    rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0.08) 30.73%,
-    rgba(255, 255, 255, 0.2) 72.92%,
-    rgba(255, 255, 255, 0.2) 99.48%
-  );
+  background-color: linear-gradient(154.56deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.08) 30.73%, rgba(255, 255, 255, 0.2) 72.92%, rgba(255, 255, 255, 0.2) 99.48%);
   z-index: 1;
+  backdrop-filter: blur(50px);
   -ms-transform: scale(1.1); /* IE 9 */
   -webkit-transform: scale(1.1); /* Safari 3-8 */
   transform: scale(1.1);
+  height: fit-content;
+  padding: 60px 30px;
 }
 
 .zoom:hover img {
@@ -169,6 +172,7 @@ body {
   }
 }
 
+
 @media (max-width: 768px) {
   .page {
     padding: 0 20px;
@@ -199,3 +203,23 @@ body {
     overflow-y: scroll;
   }
 }
+
+.cs-scroll::-webkit-scrollbar {
+  width: 2px !important; /* Adjust the width as needed */
+}
+
+/* Scrollbar Track Color */
+.cs-scroll::-webkit-scrollbar-track {
+  background-color: #f1f1f1!important; /* Set the color of the track */
+}
+
+/* Scrollbar Thumb */
+.cs-scroll::-webkit-scrollbar-thumb {
+  background-color: #888!important; /* Set the color of the thumb */
+}
+
+/* Scrollbar Thumb on Hover */
+.cs-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: #555 !important; /* Set the color of the thumb on hover */
+}
+

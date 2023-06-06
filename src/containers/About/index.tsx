@@ -14,7 +14,7 @@ const About: React.FC = () => {
             height={24}
           />
         </div>
-        <div className="flex font-Antonio text-[36px] text-white max-sm:text-[24px] max-md:w-full max-md:justify-center">
+        <div className="flex font-Antonio text-[36px] font-light text-white max-sm:text-[24px] max-md:w-full max-md:justify-center">
           {t('what_is')}
         </div>
         <div className="flex font-Inter max-sm:text-[14px] text-primary-200 font-light max-md:w-full max-md:text-center max-w-[600px]">

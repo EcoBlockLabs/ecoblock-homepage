@@ -2,6 +2,7 @@ import React from 'react';
 
 import Header from '../../components/Header';
 import About from '../About';
+import ChooseEcoBlock from '../ChooseEcoBlock';
 import ExploreEcoBlock from '../ExploreEcoBlock';
 import Footer from '../Footer';
 import Intro from '../Intro';
@@ -19,9 +20,9 @@ const SreenMobile = () => {
         <div className="page">
           <About />
         </div>
-        {/* <div className="page third-page">
-            <ChooseEcoBlock />
-          </div> */}
+        <div className="page">
+          <ChooseEcoBlock />
+        </div>
         <div className=" my-20">
           <ExploreEcoBlock />
         </div>
