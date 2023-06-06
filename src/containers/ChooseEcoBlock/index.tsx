@@ -28,7 +28,7 @@ const ChooseEcoBlock: React.FC = () => {
   ];
   return (
     <div className="w-full h-[100%] items-center justify-between pt-[140px] max-w-[1288px]">
-      <div className="flex w-full mb-[80px] max-md:flex-col max-md:text-center">
+      <div className="flex w-full mb-[40px] mt-[10px] max-md:flex-col max-md:text-center">
         <div className="flex w-full flex-col items-start  justify-start space-y-4">
           <div className="max-md:mx-auto">
             <Image
@@ -42,24 +42,28 @@ const ChooseEcoBlock: React.FC = () => {
             {t('explore_eco')}
           </div>
         </div>
-        <div className="flex w-full justify-center font-Inter max-md:pt-[10px] text-xl text-primary-200 font-light">
+        <div className="flex w-full justify-center font-Inter max-sm:text-[14px] max-md:pt-[10px] text-xl text-primary-200 font-light">
           {t('explore_eco_layer')}
         </div>
       </div>
-      <div className="flex justify-start pt-[38px] overflow-x-scroll cs-scroll">
+      <div className="flex justify-start pt-[38px] max-md:flex-col max-2xl:overflow-x-auto list-item cs-scroll">
         {items.map((e, index) => {
           return (
             <div
               key={index}
-              className=" w-full bg-primary-200 zoom text-center min-w-[300px]"
+              className="relative w-full zoom text-center min-w-[300px]"
             >
-              <img src={`/assets/images/${e.image}.svg`} alt="icon" />
-              <div className="title text-white font-Antonio my-[20px]">
-                {t(e.name)}
+              <div className="absolute z-10 w-10 h-full bg-transparent left-[-4px] top-0" />
+              <div>
+                <img src={`/assets/images/${e.image}.svg`} alt="icon" />
+                <div className="title text-white font-Antonio my-[20px]">
+                  {t(e.name)}
+                </div>
+                <div className="content font-Inter font-light">
+                  {t(e.content)}
+                </div>
               </div>
-              <div className="content font-Inter font-light">
-                {t(e.content)}
-              </div>
+              <div className="absolute z-10 w-10 h-full bg-transparent right-[-4px] top-0" />
             </div>
           );
         })}
