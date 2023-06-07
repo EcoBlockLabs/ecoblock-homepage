@@ -14,6 +14,6 @@ export const convertValueType = (value: number): string => {
     case 3:
       return 'Explore EcoBlock';
     default: // If type is introduction
-      return 'Introduction';
+      return '';
   }
 };

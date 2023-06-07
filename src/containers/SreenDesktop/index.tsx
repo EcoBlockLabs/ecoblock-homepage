@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import createScrollSnap from 'scroll-snap';
 
+import Header from '../../components/Header';
 import BaseLayout from '../../layout/BaseLayout';
 import About from '../About';
 import ChooseEcoBlock from '../ChooseEcoBlock';
@@ -50,7 +51,7 @@ const SreenDesktop = () => {
               setCurrentPage(newCurrentPage);
             }
             setIsScrolling(false);
-          }, 500);
+          }, 200);
         }
       }
     };
@@ -81,6 +82,9 @@ const SreenDesktop = () => {
     <>
       <BaseLayout currentPage={currentPage} setCurrentPage={setCurrentPage}>
         <div id="container" ref={container}>
+          <div id="header">
+            <Header />
+          </div>
           <div className="page first-page ">
             <Intro />
           </div>
@@ -96,33 +100,33 @@ const SreenDesktop = () => {
           <div className="page five-page  ">
             <Footer />
           </div>
+          {currentPage > 0 && (
+            <button
+              className="container prev max-md:hidden fixed-button pr-[150px] font-Antonio font-[18px] font-thin text-white"
+              onClick={goToPreviousPage}
+            >
+              <Image
+                src="/assets/images/icons/chevron_up_icon.png"
+                width={24}
+                height={24}
+              />
+              <div>{'Ethereum scaling solution'}</div>
+            </button>
+          )}
+          {currentPage !== 4 && (
+            <button
+              className="container next z-40 fixed-button font-Antonio font-[18px] pr-[150px] font-thin text-white"
+              onClick={goToNextPage}
+            >
+              <div>{currentPage === 3 ? 'About Us' : 'What is EcoBlock?'}</div>
+              <Image
+                src="/assets/images/icons/chevron_down_icon.png"
+                width={24}
+                height={24}
+              />
+            </button>
+          )}
         </div>
-        {currentPage > 0 && (
-          <button
-            className="prev max-md:hidden fixed-button pr-[150px] font-Antonio font-[18px] font-thin text-white"
-            onClick={goToPreviousPage}
-          >
-            <Image
-              src="/assets/images/icons/chevron_up_icon.png"
-              width={24}
-              height={24}
-            />
-            <div>{'Ethereum scaling solution'}</div>
-          </button>
-        )}
-        {currentPage !== 4 && (
-          <button
-            className="next z-40 fixed-button font-Antonio font-[18px] pr-[150px] font-thin text-white"
-            onClick={goToNextPage}
-          >
-            <div>{currentPage === 3 ? 'About Us' : 'What is EcoBlock?'}</div>
-            <Image
-              src="/assets/images/icons/chevron_down_icon.png"
-              width={24}
-              height={24}
-            />
-          </button>
-        )}
       </BaseLayout>
     </>
   );

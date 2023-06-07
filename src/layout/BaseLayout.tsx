@@ -1,6 +1,5 @@
 import Image from 'next/image';
 
-import Header from '../components/Header';
 import { convertValueType } from '../utils/landing';
 
 interface LayoutProps {
@@ -54,8 +53,8 @@ const BaseLayout: React.FC<LayoutProps> = ({
   return (
     <>
       <div className="main bg-no-repeat bg-cover flex w-full min-h-[100vh] overflow-hidden relative justify-center">
-        <div className="w-[100%] min-h-[100vh] bg-no-repeat bg-cover container">
-          <Header />
+        <div className="w-[100%] min-h-[100vh] bg-no-repeat bg-cover container relative">
+          {/* <Header /> */}
           <div className="flex w-full flex-col min-h-[100%] container relative">
             <div>{children}</div>
           </div>
