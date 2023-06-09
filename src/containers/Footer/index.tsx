@@ -94,13 +94,13 @@ const Footer: React.FC = () => {
           </div>
           <div className="font-Inter text-[16px] text-primary-200 font-light">
             <div>contact@ecoblock.com</div>
-            <div className="max-md:mt-[16px]">079 5567 2982</div>
+            {/* <div className="max-md:mt-[16px]">079 5567 2982</div> */}
           </div>
         </div>
       </div>
 
       <div className="flex w-full max-md:mt-[40px]">
-        <div className="divider font-Poppins font-light text-[14px]">
+        <div className="divider font-Poppins font-light text-[14px] max-sm:text-center">
           © COPYRIGHT 2023 Ecoblock. ALL RIGHTS RESERVED
         </div>
       </div>
