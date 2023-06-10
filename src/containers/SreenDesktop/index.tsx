@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import Header from '../../components/Header';
+// import Header from '../../components/Header';
 import Background from '../../layout/Background';
 import About from '../About';
 import ChooseEcoBlock from '../ChooseEcoBlock';
@@ -9,7 +9,7 @@ import Footer from '../Footer';
 import Intro from '../Intro';
 
 const SreenDesktop = () => {
-  const [activeMenuItem, setActiveMenuItem] = useState('introduction');
+  const [, setActiveMenuItem] = useState('introduction');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,7 +31,7 @@ const SreenDesktop = () => {
 
   return (
     <Background>
-      <Header activeMenuItem={activeMenuItem} />
+      {/* <Header activeMenuItem={activeMenuItem} /> */}
       <div className="container">
         <section
           id="introduction"
