@@ -3,8 +3,24 @@ import useTranslation from 'next-translate/useTranslation';
 
 const Intro: React.FC = () => {
   const { t } = useTranslation('home');
+  const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+
+    const targetSectionId = event.currentTarget.getAttribute('href');
+    if (targetSectionId) {
+      const targetSection = document.querySelector(
+        targetSectionId
+      ) as HTMLElement;
+      if (targetSection) {
+        window.scrollTo({
+          top: targetSection.offsetTop,
+          behavior: 'smooth',
+        });
+      }
+    }
+  };
   return (
-    <div className="flex w-full h-[100%] max-xl:w-fit max-xl:flex-col-reverse max-xl:justify-center items-center justify-between">
+    <div className="flex w-full h-[100%] relative max-xl:pb-[140px] max-xl:w-fit max-lg:flex-col-reverse max-xl:justify-center items-center justify-between">
       <div className="flex w-full flex-col items-start justify-start space-y-4 max-xl:mt-12">
         <div className="flex max-md:w-full max-md:justify-center">
           <Image
@@ -67,12 +83,22 @@ const Intro: React.FC = () => {
       </div>
       <div className="flex w-full justify-center">
         <Image
-          src="/assets/images/section1.png"
+          src="/assets/images/section1.svg"
           width={432}
           height={412}
           // className="w-full"
         />
       </div>
+      <a href="#about" onClick={handleLinkClick}>
+        <button className="absolute bottom-0 left-[50%] btn-transform justify-center z-40 font-Antonio font-[18px] font-thin text-white">
+          <div>What is EcoBlock</div>
+          <Image
+            src="/assets/images/icons/chevron_down_icon.png"
+            width={24}
+            height={24}
+          />
+        </button>
+      </a>
     </div>
   );
 };

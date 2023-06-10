@@ -1,10 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
-
-import Image from 'next/image';
-import createScrollSnap from 'scroll-snap';
+import React, { useEffect, useState } from 'react';
 
 import Header from '../../components/Header';
-import BaseLayout from '../../layout/BaseLayout';
+import Background from '../../layout/Background';
 import About from '../About';
 import ChooseEcoBlock from '../ChooseEcoBlock';
 import ExploreEcoBlock from '../ExploreEcoBlock';
@@ -12,123 +9,56 @@ import Footer from '../Footer';
 import Intro from '../Intro';
 
 const SreenDesktop = () => {
-  const container = useRef<HTMLDivElement>(null);
-  const [currentPage, setCurrentPage] = useState(0);
-  const [isScrolling, setIsScrolling] = useState(false);
-
-  const goToPreviousPage = () => {
-    if (currentPage > 0) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
-
-  // const goToNextPage = () => {
-  //   const totalPages = container.current?.childElementCount ?? 0;
-  //   if (currentPage < totalPages - 1) {
-  //     setCurrentPage(currentPage + 1);
-  //   }
-  // };
+  const [activeMenuItem, setActiveMenuItem] = useState('introduction');
 
   useEffect(() => {
-    const handleScroll = (event: WheelEvent) => {
-      if (!isScrolling) {
-        setIsScrolling(true);
-        const containerElement = container.current;
-        if (containerElement) {
-          const { deltaY } = event;
-          // const windowHeight = window.innerHeight;
-          const totalPages = containerElement.childElementCount;
-          let newCurrentPage = currentPage;
+    const handleScroll = () => {
+      const sectionElements = document.querySelectorAll('section');
 
-          if (deltaY > 0 && currentPage < totalPages - 1) {
-            newCurrentPage += 1;
-          } else if (deltaY < 0 && currentPage > 0) {
-            newCurrentPage -= 1;
+      sectionElements.forEach((section) => {
+        if (section.getBoundingClientRect) {
+          const { top, bottom } = section.getBoundingClientRect();
+          if (top <= 70 && bottom >= 70) {
+            setActiveMenuItem(section.id);
           }
-
-          setTimeout(() => {
-            if (newCurrentPage !== currentPage) {
-              setCurrentPage(newCurrentPage);
-            }
-            setIsScrolling(false);
-          }, 200);
         }
-      }
-    };
-
-    const bindScrollSnap = () => {
-      const element = container.current;
-      createScrollSnap(element!, {
-        snapDestinationY: '100%',
-      });
-
-      element?.scrollTo({
-        top: currentPage * window.innerHeight,
-        behavior: 'smooth',
       });
     };
 
-    const containerElement = container.current;
-    containerElement?.addEventListener('wheel', handleScroll);
-
-    bindScrollSnap();
-
-    return () => {
-      containerElement?.removeEventListener('wheel', handleScroll);
-    };
-  }, [currentPage, isScrolling]);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <>
-      <BaseLayout currentPage={currentPage} setCurrentPage={setCurrentPage}>
-        <div id="container" ref={container}>
-          <div id="header">
-            <Header />
-          </div>
-          <div className="page first-page ">
-            <Intro />
-          </div>
-          <div className="page second-page ">
-            <About />
-          </div>
-          <div className="page third-page  ">
-            <ChooseEcoBlock />
-          </div>
-          <div className="page fourth-page ">
-            <ExploreEcoBlock />
-          </div>
-          <div className="page five-page  ">
-            <Footer />
-          </div>
-          {currentPage > 0 && (
-            <button
-              className="container prev max-md:hidden fixed-button pr-[150px] font-Antonio font-[18px] font-thin text-white"
-              onClick={goToPreviousPage}
-            >
-              <Image
-                src="/assets/images/icons/chevron_up_icon.png"
-                width={24}
-                height={24}
-              />
-              <div>{'Ethereum scaling solution'}</div>
-            </button>
-          )}
-          {/* {currentPage !== 4 && (
-            <button
-              className="container next z-40 fixed-button font-Antonio font-[18px] pr-[150px] font-thin text-white"
-              onClick={goToNextPage}
-            >
-              <div>{currentPage === 3 ? 'About Us' : 'What is EcoBlock?'}</div>
-              <Image
-                src="/assets/images/icons/chevron_down_icon.png"
-                width={24}
-                height={24}
-              />
-            </button>
-          )} */}
-        </div>
-      </BaseLayout>
-    </>
+    <Background>
+      <Header activeMenuItem={activeMenuItem} />
+      <div className="container">
+        <section
+          id="introduction"
+          className="page max-lg:h-fit min-h-[100vh] h-full max-md:mt-[140px]"
+        >
+          <Intro />
+        </section>
+        <section id="about" className="page max-lg:h-fit h-full min-h-[100vh] ">
+          <About />
+        </section>
+        <section id="why" className="page min-h-[100vh] h-full max-xl:h-auto">
+          <ChooseEcoBlock />
+        </section>
+        <section
+          id="explore"
+          className="page max-md:h-[auto] max-lg:h-[100%] min-h-[100vh] h-full"
+        >
+          <ExploreEcoBlock />
+        </section>
+        <section
+          id="contact"
+          className="page max-lg:h-fit max-lg:min-h-fit min-h[100vh] h-full"
+        >
+          <Footer />
+        </section>
+      </div>
+    </Background>
   );
 };
 

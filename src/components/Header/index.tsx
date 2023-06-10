@@ -7,15 +7,67 @@ import useTranslation from 'next-translate/useTranslation';
 
 import { classNames } from '../../utils/classNames';
 
-const Header: React.FC = () => {
+interface IHeaderProps {
+  activeMenuItem?: string;
+}
+
+const Header: React.FC<IHeaderProps> = ({ activeMenuItem }) => {
   const changeLanguage = (lang: string) => {
     setLanguage(lang);
   };
 
   const { lang } = useTranslation();
 
+  const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+
+    const targetSectionId = event.currentTarget.getAttribute('href');
+    if (targetSectionId) {
+      const targetSection = document.querySelector(
+        targetSectionId
+      ) as HTMLElement;
+      if (targetSection) {
+        window.scrollTo({
+          top: targetSection.offsetTop,
+          behavior: 'smooth',
+        });
+      }
+    }
+  };
+
+  const listMenu = [
+    {
+      id: 0,
+      label: 'Introduction',
+      icon: '/assets/images/icons/chevron-right.svg',
+      link: '#introduction',
+      iconActive: '/assets/images/icons/chevron-right-empty.svg',
+    },
+    {
+      id: 1,
+      label: 'What is EcoBlock',
+      icon: '/assets/images/icons/chevron-right.svg',
+      link: '#about',
+      iconActive: '/assets/images/icons/chevron-right-empty.svg',
+    },
+    {
+      id: 2,
+      label: 'Why choose EcoBlock',
+      icon: '/assets/images/icons/chevron-right.svg',
+      link: '#why',
+      iconActive: '/assets/images/icons/chevron-right-empty.svg',
+    },
+    {
+      id: 3,
+      label: 'Explore EcoBlock',
+      icon: '/assets/images/icons/chevron-right.svg',
+      link: '#explore',
+      iconActive: '/assets/images/icons/chevron-right-empty.svg',
+    },
+  ];
+
   return (
-    <div className="container w-full pb-6 z-50 fixed pt-[44px] max-md:px-[16px] flex gap-3 justify-between">
+    <div className="header w-full z-50 px-28 fixed h-[72px] items-center max-md:px-[16px] flex gap-3 justify-between">
       <div className="flex gap-4">
         <div className="max-md:hidden block">
           <Image
@@ -33,7 +85,39 @@ const Header: React.FC = () => {
             height={40}
           />
         </div>
-
+      </div>
+      <div className="hidden xl:flex">
+        {listMenu.map((item) => {
+          return (
+            <a key={item.link} href={item.link} onClick={handleLinkClick}>
+              <div key={item.link} className="grid justify-center mr-[60px]">
+                <div
+                  className="font-Antonio font-bold text-[14px]"
+                  style={{
+                    color:
+                      `#${activeMenuItem}` === item.link ? 'white' : '#535353',
+                  }}
+                >
+                  {item.label}
+                </div>
+                <div className="flex pt-[4px] justify-center">
+                  <Image
+                    src={
+                      `#${activeMenuItem}` === item.link
+                        ? item.iconActive
+                        : item.icon
+                    }
+                    alt="icon"
+                    width={16}
+                    height={16}
+                  />
+                </div>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+      <div>
         <Menu as="div" className="relative inline-block text-left">
           <div>
             <Menu.Button className="inline-flex w-full justify-center items-center gap-x-1.5 rounded-md px-3 py-2">
@@ -113,8 +197,6 @@ const Header: React.FC = () => {
             </Menu.Items>
           </Transition>
         </Menu>
-      </div>
-      <div>
         <Menu as="div" className="relative inline-block text-left">
           <div>
             <Menu.Button className="inline-flex w-full justify-center items-center gap-x-1.5 rounded-md px-3 py-2">
@@ -183,6 +265,14 @@ const Header: React.FC = () => {
         {`
           .menu-translate {
             z-index: 9999;
+          }
+          .header {
+            background-image: linear-gradient(
+              90deg,
+              rgba(255, 255, 255, 0.1) 0.98%,
+              rgba(255, 255, 255, 0.1) 100%
+            );
+            backdrop-filter: blur(25px);
           }
         `}
       </style>

@@ -28,11 +28,13 @@ body {
   font-weight: 700;
   font-size: 18px;
   cursor: default;
+  background-image: url('/assets/images/background.png');
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
 }
-
-/* .container{
-  max-width:1536px !important;
-} */
 #container {
   display: flex;
   flex-direction: column;
@@ -41,7 +43,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding-right: 140px;
+  //padding-right: 140px;
   height: 100%;
   overflow-y: clip;
 }
@@ -55,71 +57,17 @@ body {
   box-sizing: border-box;
   background-color: transparent;
 }
-.first-page {
-  height: 100vh;
-  min-height: 100vh;
-}
-.second-page {
-  height: 100vh;
-  min-height: 100vh;
-}
-.third-page {
-  height: 100%;
-  min-height: 100vh;
-}
-.fourth-page {
-  height: 100vh;
-  min-height: 100vh;
-}
-
-.five-page {
-  height: 100vh;
-  min-height: 100vh;
-}
-
-.prev {
-  z-index: 999;
-  top: 70px;
-  width: 100%;
-}
-.next {
-  width: 100%;
-  z-index: 9;
-  bottom: 00px;
-}
-.fixed-button {
-  position: fixed;
-}
-
-#header {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  overflow: auto;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding-right: 140px;
-  height: 100%;
-  overflow-y: clip;
-}
-
-.arrow-right {
-  width: 0px;
-  height: 0px;
-  border-bottom: 16px solid transparent;
-  border-top: 16px solid transparent;
-  border-left: 16px solid #2f2f2f; /* Tam giác trái được đổ màu */
+.btn-transform{
+  transform: translate(-50%, -50%);
 }
 
 .zoom {
   background-color: rgba(64, 116, 207, 0.2);
   backdrop-filter: blur(50px);
-  transition: transform 0.7s;
+  transition: transform 1.5s;
   color: #f2f2f2;
-  height: 423px;
   padding: 60px 50px;
-  transform-origin: center bottom;
+  transform-origin: center center;
   margin:0;
 }
 
@@ -138,7 +86,7 @@ body {
 }
 
 .zoom:hover {
-  background-color: linear-gradient(154.56deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.08) 30.73%, rgba(255, 255, 255, 0.2) 72.92%, rgba(255, 255, 255, 0.2) 99.48%);
+  background-image: linear-gradient(154.56deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.08) 30.73%, rgba(255, 255, 255, 0.2) 72.92%, rgba(255, 255, 255, 0.2) 99.48%);
   z-index: 1;
   backdrop-filter: blur(50px);
   -ms-transform: scale(1.1); /* IE 9 */
@@ -146,6 +94,7 @@ body {
   transform: scale(1.1);
   height: fit-content;
   padding: 60px 30px;
+  transform-origin: center center;
 }
 
 .scale-card:hover {
@@ -229,24 +178,4 @@ body {
     height: 100vh;
     overflow-y: scroll;
   }
-}
-
-.cs-scroll::-webkit-scrollbar {
-  height: 5px !important; /* Adjust the width as needed */
-}
-
-/* Scrollbar Track Color */
-.cs-scroll::-webkit-scrollbar-track {
-  background-color: transparent !important; /* Set the color of the track */
-}
-
-/* Scrollbar Thumb */
-.cs-scroll::-webkit-scrollbar-thumb {
-  border-radius: 16px !important;
-  background-color: white!important; /* Set the color of the thumb */
-}
-
-/* Scrollbar Thumb on Hover */
-.cs-scroll::-webkit-scrollbar-thumb:hover {
-  background-color: white !important; /* Set the color of the thumb on hover */
 }
