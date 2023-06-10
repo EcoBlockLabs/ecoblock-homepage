@@ -22,12 +22,12 @@ const SreenDesktop = () => {
     }
   };
 
-  const goToNextPage = () => {
-    const totalPages = container.current?.childElementCount ?? 0;
-    if (currentPage < totalPages - 1) {
-      setCurrentPage(currentPage + 1);
-    }
-  };
+  // const goToNextPage = () => {
+  //   const totalPages = container.current?.childElementCount ?? 0;
+  //   if (currentPage < totalPages - 1) {
+  //     setCurrentPage(currentPage + 1);
+  //   }
+  // };
 
   useEffect(() => {
     const handleScroll = (event: WheelEvent) => {
@@ -113,7 +113,7 @@ const SreenDesktop = () => {
               <div>{'Ethereum scaling solution'}</div>
             </button>
           )}
-          {currentPage !== 4 && (
+          {/* {currentPage !== 4 && (
             <button
               className="container next z-40 fixed-button font-Antonio font-[18px] pr-[150px] font-thin text-white"
               onClick={goToNextPage}
@@ -125,7 +125,7 @@ const SreenDesktop = () => {
                 height={24}
               />
             </button>
-          )}
+          )} */}
         </div>
       </BaseLayout>
     </>
