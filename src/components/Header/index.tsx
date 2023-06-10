@@ -7,11 +7,11 @@ import useTranslation from 'next-translate/useTranslation';
 
 import { classNames } from '../../utils/classNames';
 
-// interface IHeaderProps {
-//   activeMenuItem?: string;
-// }
+interface IHeaderProps {
+  activeMenuItem?: string;
+}
 
-const Header: React.FC = () => {
+const Header: React.FC<IHeaderProps> = ({ activeMenuItem }) => {
   const changeLanguage = (lang: string) => {
     setLanguage(lang);
   };
@@ -93,21 +93,20 @@ const Header: React.FC = () => {
               <div key={item.link} className="grid justify-center mr-[60px]">
                 <div
                   className="font-Antonio font-bold text-[14px]"
-                  // style={{
-                  //   color:
-                  //     `#${activeMenuItem}` === item.link ? 'white' : '#535353',
-                  // }}
+                  style={{
+                    color:
+                      `#${activeMenuItem}` === item.link ? 'white' : '#535353',
+                  }}
                 >
                   {item.label}
                 </div>
                 <div className="flex pt-[4px] justify-center">
                   <Image
-                    // src={
-                    //   `#${activeMenuItem}` === item.link
-                    //     ? item.iconActive
-                    //     : item.icon
-                    // }
-                    src={item.icon}
+                    src={
+                      `#${activeMenuItem}` === item.link
+                        ? item.iconActive
+                        : item.icon
+                    }
                     alt="icon"
                     width={16}
                     height={16}
