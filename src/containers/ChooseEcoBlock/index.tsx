@@ -1,8 +1,25 @@
-import Image from 'next/image';
 import useTranslation from 'next-translate/useTranslation';
+import Image from 'next/image';
 
 const ChooseEcoBlock: React.FC = () => {
   const { t } = useTranslation('home');
+
+  const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+
+    const targetSectionId = event.currentTarget.getAttribute('href');
+    if (targetSectionId) {
+      const targetSection = document.querySelector(
+        targetSectionId
+      ) as HTMLElement;
+      if (targetSection) {
+        window.scrollTo({
+          top: targetSection.offsetTop,
+          behavior: 'smooth',
+        });
+      }
+    }
+  };
 
   const items = [
     {
@@ -27,8 +44,8 @@ const ChooseEcoBlock: React.FC = () => {
     },
   ];
   return (
-    <div className="w-full h-[100%] items-center justify-between pt-[140px] max-w-[1288px]">
-      <div className="flex w-full mb-[40px] mt-[10px] max-md:flex-col max-md:text-center">
+    <div className="w-full relative h-[100%] items-center justify-between max-xl:pb-[100px] pt-[100px] max-w-[1288px]">
+      <div className="flex w-full mb-[40px] mt-[10px] max-lg:flex-col max-md:text-center">
         <div className="flex w-full flex-col items-start  justify-start space-y-4">
           <div className="max-md:mx-auto">
             <Image
@@ -42,16 +59,16 @@ const ChooseEcoBlock: React.FC = () => {
             {t('explore_eco')}
           </div>
         </div>
-        <div className="flex w-full justify-center font-Inter max-sm:text-[14px] max-md:pt-[10px] text-xl text-primary-200 font-light">
+        <div className="flex w-full justify-center font-Inter text-[20px] max-sm:text-[14px] max-md:pt-[10px] text-primary-200 font-light">
           {t('explore_eco_layer')}
         </div>
       </div>
-      <div className="flex justify-start pt-[38px] max-md:flex-col max-2xl:overflow-x-auto list-item cs-scroll">
+      <div className="flex justify-center py-[38px] max-md:flex-col grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-0">
         {items.map((e, index) => {
           return (
             <div
               key={index}
-              className="relative w-full zoom text-center min-w-[300px]"
+              className="relative w-full zoom text-center min-w-[300px] h-[423px] max-xl:h-[339px]"
             >
               <div className="absolute z-10 w-10 h-full bg-transparent left-[-4px] top-0" />
               <div>
@@ -68,6 +85,16 @@ const ChooseEcoBlock: React.FC = () => {
           );
         })}
       </div>
+      <a href="#explore" onClick={handleLinkClick}>
+        <button className="absolute bottom-0 left-[50%] btn-transform justify-center z-40 font-Antonio font-[18px] font-thin text-white">
+          <div>Explore EcoBlock</div>
+          <Image
+            src="/assets/images/icons/chevron_down_icon.png"
+            width={24}
+            height={24}
+          />
+        </button>
+      </a>
     </div>
   );
 };
