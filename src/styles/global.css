@@ -43,7 +43,6 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  //padding-right: 140px;
   height: 100%;
   overflow-y: clip;
 }
@@ -53,7 +52,6 @@ body {
   align-items: center;
   position: relative;
   width: 100%;
-  /* padding: 0 60px; */
   box-sizing: border-box;
   background-color: transparent;
 }
@@ -142,40 +140,3 @@ body {
   padding-bottom:16px;
 }
 
-@media (max-width: 1024px) {
-  #container {
-    padding-right: 0px;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .page {
-    padding: 0 20px;
-  }
-  .first-page {
-    height: 100%;
-    min-height: 100%;
-  }
-  .second-page {
-    height: 100%;
-    min-height: 100%;
-  }
-  .third-page {
-    height: 100%;
-    min-height: 100%;
-  }
-  .fourth-page {
-    height: 100%;
-    min-height: 100%;
-  }
-  
-  .five-page {
-    height: 100%;
-    min-height: 100%;
-  }
-  #container {
-    height: 100vh;
-    overflow-y: scroll;
-  }
-}
