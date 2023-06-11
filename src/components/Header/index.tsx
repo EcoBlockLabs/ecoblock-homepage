@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 
 import { Menu, Transition } from '@headlessui/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import setLanguage from 'next-translate/setLanguage';
 import useTranslation from 'next-translate/useTranslation';
 
@@ -225,44 +226,70 @@ const Header: React.FC<IHeaderProps> = ({ activeMenuItem }) => {
                 <div className="py-1 font-Inter font-normal ">
                   <Menu.Item>
                     {({ active }) => (
-                      <button
-                        className={classNames(
-                          active
-                            ? 'bg-gray-100 text-gray-900'
-                            : 'text-gray-700',
-                          'block w-full px-4 py-2 text-sm gap-2 flex items-center'
-                        )}
+                      <Link
+                        passHref
+                        href={
+                          'https://bridge.ecoblock.tech/?fbclid=IwAR06wiDj6XsDk33-w7se0SmkiTqFanLcpgkcyWm4dXouQ31ze6Lqcdn0mN0'
+                        }
                       >
-                        Bridge
-                      </button>
+                        <button
+                          className={classNames(
+                            active
+                              ? 'bg-gray-100 text-gray-900'
+                              : 'text-gray-700',
+                            'block w-full px-4 py-2 text-sm gap-2 flex items-center'
+                          )}
+                        >
+                          <a target="_blank" rel="noopener noreferrer">
+                            Bridge
+                          </a>
+                        </button>
+                      </Link>
                     )}
                   </Menu.Item>
                   <Menu.Item>
                     {({ active }) => (
-                      <button
-                        className={classNames(
-                          active
-                            ? 'bg-gray-100 text-gray-900'
-                            : 'text-gray-700',
-                          'block w-full px-4 py-2 text-sm gap-2 flex items-center'
-                        )}
+                      <Link
+                        passHref
+                        href={
+                          'https://ecoscan.io/?fbclid=IwAR0QE54HG5QCUGa0rfo0CG5VKu82e_FxZY2IX_jfBcuE8p-A-xNXL1RTItU'
+                        }
                       >
-                        Block Explorer
-                      </button>
+                        <button
+                          className={classNames(
+                            active
+                              ? 'bg-gray-100 text-gray-900'
+                              : 'text-gray-700',
+                            'block w-full px-4 py-2 text-sm gap-2 flex items-center'
+                          )}
+                        >
+                          <a target="_blank" rel="noopener noreferrer">
+                            Block Explorer
+                          </a>
+                        </button>
+                      </Link>
                     )}
                   </Menu.Item>
                   <Menu.Item>
                     {({ active }) => (
-                      <button
-                        className={classNames(
-                          active
-                            ? 'bg-gray-100 text-gray-900'
-                            : 'text-gray-700',
-                          'block w-full px-4 py-2 text-sm gap-2 flex items-center'
-                        )}
+                      <Link
+                        href={
+                          'https://docs.ecoblock.tech/?fbclid=IwAR3KJVZmXKkPEn6pdi0m6xJ8imIVdKSaNh3tdnxE_U6YGyZMGjKV-Tdgv-Q'
+                        }
                       >
-                        Docs
-                      </button>
+                        <button
+                          className={classNames(
+                            active
+                              ? 'bg-gray-100 text-gray-900'
+                              : 'text-gray-700',
+                            'block w-full px-4 py-2 text-sm gap-2 flex items-center'
+                          )}
+                        >
+                          <a target="_blank" rel="noopener noreferrer">
+                            Docs
+                          </a>
+                        </button>
+                      </Link>
                     )}
                   </Menu.Item>
                 </div>

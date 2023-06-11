@@ -30,14 +30,6 @@ const About: React.FC = () => {
           className="w-full"
         />
       </div>
-      <button className="absolute bottom-0 left-[50%] btn-transform justify-center z-40 font-Antonio font-[18px] font-thin text-white">
-        <div>Why choose EcoBlock</div>
-        <Image
-          src="/assets/images/icons/chevron_down_icon.png"
-          width={24}
-          height={24}
-        />
-      </button>
     </div>
   );
 };
