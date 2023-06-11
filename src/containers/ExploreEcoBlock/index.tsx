@@ -26,7 +26,7 @@ const ExploreEcoBlock: React.FC = () => {
   const { t } = useTranslation('home');
 
   return (
-    <div className="flex w-full h-[100%] items-center justify-between flex-row-reverse max-md:justify-end max-md:flex-col">
+    <div className="flex relative w-full h-[100%] max-md:pb-[120px] items-center justify-between flex-row-reverse max-md:justify-end max-md:flex-col">
       <div className="flex w-[40%] max-md:w-full flex-col items-start justify-start space-y-4 max-md:mb-[40px]">
         <div className="hidden headline w-[100%] max-md:flex "></div>
         <div className="flex max-md:w-full max-md:justify-center">
@@ -74,6 +74,14 @@ const ExploreEcoBlock: React.FC = () => {
           );
         })}
       </div>
+      <button className="absolute bottom-0 left-[50%] btn-transform justify-center z-40 font-Antonio font-[18px] font-thin text-white">
+        <div>Contact Us</div>
+        <Image
+          src="/assets/images/icons/chevron_down_icon.png"
+          width={24}
+          height={24}
+        />
+      </button>
     </div>
   );
 };

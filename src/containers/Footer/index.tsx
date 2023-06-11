@@ -2,20 +2,20 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const Footer: React.FC = () => {
-  const footer = [
-    {
-      name: 'Brigde',
-      item: ['Bridge item 1', 'Bridge item 1', 'Bridge item 1'],
-    },
-    {
-      name: 'Brigde 2',
-      item: ['Bridge item 1', 'Bridge item 1', 'Bridge item 1'],
-    },
-    {
-      name: 'Brigde 3',
-      item: ['Bridge item 1', 'Bridge item 1', 'Bridge item 1'],
-    },
-  ];
+  // const footer = [
+  //   {
+  //     name: 'Brigde',
+  //     item: ['Bridge item 1', 'Bridge item 1', 'Bridge item 1'],
+  //   },
+  //   {
+  //     name: 'Brigde 2',
+  //     item: ['Bridge item 1', 'Bridge item 1', 'Bridge item 1'],
+  //   },
+  //   {
+  //     name: 'Brigde 3',
+  //     item: ['Bridge item 1', 'Bridge item 1', 'Bridge item 1'],
+  //   },
+  // ];
 
   const icon = [
     'in',
@@ -27,8 +27,8 @@ const Footer: React.FC = () => {
     'youtube',
   ];
   return (
-    <div className="flex flex-col justify-between h-[70%] w-full self-end max-w-[970px]">
-      <div className=" flex w-full items-center justify-between">
+    <div className="flex flex-col justify-between h-[70%] max-h-[500px] w-full self-end max-w-[970px]">
+      {/* <div className=" flex w-full items-center justify-between">
         {footer.map((e) => {
           return (
             <div key={e.name}>
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
             </div>
           );
         })}
-      </div>
+      </div> */}
       <div className="w-full items-center justify-between max-md:text-center max-md:mt-[120px]">
         <div className="flex w-full mb-[55px] justify-between max-md:flex-col">
           <div className="max-md:justify-center flex-col">
@@ -94,13 +94,13 @@ const Footer: React.FC = () => {
           </div>
           <div className="font-Inter text-[16px] text-primary-200 font-light">
             <div>contact@ecoblock.com</div>
-            <div className="max-md:mt-[16px]">079 5567 2982</div>
+            {/* <div className="max-md:mt-[16px]">079 5567 2982</div> */}
           </div>
         </div>
       </div>
 
       <div className="flex w-full max-md:mt-[40px]">
-        <div className="divider font-Poppins font-light text-[14px]">
+        <div className="divider font-Poppins font-light text-[14px] max-sm:text-center">
           © COPYRIGHT 2023 Ecoblock. ALL RIGHTS RESERVED
         </div>
       </div>
