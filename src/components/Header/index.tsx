@@ -232,18 +232,18 @@ const Header: React.FC<IHeaderProps> = ({ activeMenuItem }) => {
                           'https://bridge.ecoblock.tech/?fbclid=IwAR06wiDj6XsDk33-w7se0SmkiTqFanLcpgkcyWm4dXouQ31ze6Lqcdn0mN0'
                         }
                       >
-                        <button
-                          className={classNames(
-                            active
-                              ? 'bg-gray-100 text-gray-900'
-                              : 'text-gray-700',
-                            'block w-full px-4 py-2 text-sm gap-2 flex items-center'
-                          )}
-                        >
-                          <a target="_blank" rel="noopener noreferrer">
+                        <a target="_blank" rel="noopener noreferrer">
+                          <button
+                            className={classNames(
+                              active
+                                ? 'bg-gray-100 text-gray-900'
+                                : 'text-gray-700',
+                              'block w-full px-4 py-2 text-sm gap-2 flex items-center'
+                            )}
+                          >
                             Bridge
-                          </a>
-                        </button>
+                          </button>
+                        </a>
                       </Link>
                     )}
                   </Menu.Item>
@@ -255,18 +255,18 @@ const Header: React.FC<IHeaderProps> = ({ activeMenuItem }) => {
                           'https://ecoscan.io/?fbclid=IwAR0QE54HG5QCUGa0rfo0CG5VKu82e_FxZY2IX_jfBcuE8p-A-xNXL1RTItU'
                         }
                       >
-                        <button
-                          className={classNames(
-                            active
-                              ? 'bg-gray-100 text-gray-900'
-                              : 'text-gray-700',
-                            'block w-full px-4 py-2 text-sm gap-2 flex items-center'
-                          )}
-                        >
-                          <a target="_blank" rel="noopener noreferrer">
+                        <a target="_blank" rel="noopener noreferrer">
+                          <button
+                            className={classNames(
+                              active
+                                ? 'bg-gray-100 text-gray-900'
+                                : 'text-gray-700',
+                              'block w-full px-4 py-2 text-sm gap-2 flex items-center'
+                            )}
+                          >
                             Block Explorer
-                          </a>
-                        </button>
+                          </button>
+                        </a>
                       </Link>
                     )}
                   </Menu.Item>
@@ -277,18 +277,18 @@ const Header: React.FC<IHeaderProps> = ({ activeMenuItem }) => {
                           'https://docs.ecoblock.tech/?fbclid=IwAR3KJVZmXKkPEn6pdi0m6xJ8imIVdKSaNh3tdnxE_U6YGyZMGjKV-Tdgv-Q'
                         }
                       >
-                        <button
-                          className={classNames(
-                            active
-                              ? 'bg-gray-100 text-gray-900'
-                              : 'text-gray-700',
-                            'block w-full px-4 py-2 text-sm gap-2 flex items-center'
-                          )}
-                        >
-                          <a target="_blank" rel="noopener noreferrer">
+                        <a target="_blank" rel="noopener noreferrer">
+                          <button
+                            className={classNames(
+                              active
+                                ? 'bg-gray-100 text-gray-900'
+                                : 'text-gray-700',
+                              'block w-full px-4 py-2 text-sm gap-2 flex items-center'
+                            )}
+                          >
                             Docs
-                          </a>
-                        </button>
+                          </button>
+                        </a>
                       </Link>
                     )}
                   </Menu.Item>
