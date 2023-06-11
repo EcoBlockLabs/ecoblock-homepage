@@ -32,7 +32,7 @@ const SreenDesktop = () => {
   return (
     <Background>
       <Header activeMenuItem={activeMenuItem} />
-      <div className="container">
+      <div className="container max-xl:px-[20px]">
         <section
           id="introduction"
           className="page max-lg:h-fit min-h-[100vh] h-full max-md:mt-[140px]"

@@ -1,25 +1,8 @@
-import useTranslation from 'next-translate/useTranslation';
 import Image from 'next/image';
+import useTranslation from 'next-translate/useTranslation';
 
 const ChooseEcoBlock: React.FC = () => {
   const { t } = useTranslation('home');
-
-  const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault();
-
-    const targetSectionId = event.currentTarget.getAttribute('href');
-    if (targetSectionId) {
-      const targetSection = document.querySelector(
-        targetSectionId
-      ) as HTMLElement;
-      if (targetSection) {
-        window.scrollTo({
-          top: targetSection.offsetTop,
-          behavior: 'smooth',
-        });
-      }
-    }
-  };
 
   const items = [
     {
@@ -85,16 +68,14 @@ const ChooseEcoBlock: React.FC = () => {
           );
         })}
       </div>
-      <a href="#explore" onClick={handleLinkClick}>
-        <button className="absolute bottom-0 left-[50%] btn-transform justify-center z-40 font-Antonio font-[18px] font-thin text-white">
-          <div>Explore EcoBlock</div>
-          <Image
-            src="/assets/images/icons/chevron_down_icon.png"
-            width={24}
-            height={24}
-          />
-        </button>
-      </a>
+      <button className="absolute bottom-0 left-[50%] btn-transform justify-center z-40 font-Antonio font-[18px] font-thin text-white">
+        <div>Explore EcoBlock</div>
+        <Image
+          src="/assets/images/icons/chevron_down_icon.png"
+          width={24}
+          height={24}
+        />
+      </button>
     </div>
   );
 };
