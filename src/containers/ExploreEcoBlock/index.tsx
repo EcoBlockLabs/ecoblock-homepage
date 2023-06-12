@@ -8,19 +8,19 @@ const ExploreEcoBlock: React.FC = () => {
       image: 'get_starts',
       title: 'get_starts',
       content: 'content_start',
-      link: '',
+      link: 'https://docs.ecoblock.tech/?fbclid=IwAR3zINPe9A_F2IpKKX17mIdm2c2ps_YJo9v6eWKcvQsVhcB7ZmV-QJ_uf44',
     },
     {
       image: 'ex_bridge',
       title: 'bridge',
       content: 'content_bridge',
-      link: '',
+      link: 'https://bridge.ecoblock.tech/?fbclid=IwAR06wiDj6XsDk33-w7se0SmkiTqFanLcpgkcyWm4dXouQ31ze6Lqcdn0mN0',
     },
     {
       image: 'ex_faq',
       title: 'faq',
       content: 'content_faq',
-      link: '',
+      link: 'https://docs.ecoblock.tech/faq?fbclid=IwAR3KZqAqZVmCzCqmAtgRuJAcTK0VyrV7OaK_LxVYv4pF1egqOmh8KlNR12U',
     },
   ];
   const { t } = useTranslation('home');
@@ -67,21 +67,17 @@ const ExploreEcoBlock: React.FC = () => {
                   {t(e.content)}
                 </div>
                 <div className="text-purple-400 font-normal max-md:mb-[40px]	font-Inter text-[16px]">
-                  <Link href={e.link}>{t('view_docs')}</Link>
+                  <Link href={e.link}>
+                    <a target="_blank" rel="noopener noreferrer">
+                      {t('view_docs')}
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
           );
         })}
       </div>
-      <button className="absolute bottom-0 left-[50%] btn-transform justify-center z-40 font-Antonio font-[18px] font-thin text-white">
-        <div>Contact Us</div>
-        <Image
-          src="/assets/images/icons/chevron_down_icon.png"
-          width={24}
-          height={24}
-        />
-      </button>
     </div>
   );
 };

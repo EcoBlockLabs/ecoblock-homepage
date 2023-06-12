@@ -35,7 +35,7 @@ const SreenDesktop = () => {
       <div className="container max-2xl:px-[20px]">
         <section
           id="introduction"
-          className="page max-lg:h-fit min-h-[100vh] h-full max-md:mt-[140px]"
+          className="page max-lg:h-fit min-h-[100vh] h-full max-lg:mt-[140px]"
         >
           <Intro />
         </section>
