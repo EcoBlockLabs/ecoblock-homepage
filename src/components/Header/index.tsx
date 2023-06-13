@@ -1,8 +1,9 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 
 import { Menu, Transition } from '@headlessui/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import setLanguage from 'next-translate/setLanguage';
 import useTranslation from 'next-translate/useTranslation';
 
@@ -13,11 +14,16 @@ interface IHeaderProps {
 }
 
 const Header: React.FC<IHeaderProps> = ({ activeMenuItem }) => {
-  const changeLanguage = (lang: string) => {
-    setLanguage(lang);
+  const router = useRouter();
+  const { lang } = useTranslation();
+  const { pathname, query } = router;
+  const changeLanguage = (newLang: string) => {
+    router.push(pathname, pathname + query, { locale: newLang });
   };
 
-  const { lang } = useTranslation();
+  useEffect(() => {
+    setLanguage(lang);
+  }, [lang]);
 
   const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
@@ -97,9 +103,8 @@ const Header: React.FC<IHeaderProps> = ({ activeMenuItem }) => {
                     className="font-Antonio font-bold text-[14px]"
                     style={{
                       color:
-                        `#${activeMenuItem}` === item.link
-                          ? 'white'
-                          : '#535353',
+                        `#${activeMenuItem}` === item.link ? 'white' : 'white',
+                      opacity: `#${activeMenuItem}` === item.link ? '' : '0.3',
                     }}
                   >
                     {item.label}
@@ -114,6 +119,10 @@ const Header: React.FC<IHeaderProps> = ({ activeMenuItem }) => {
                       alt="icon"
                       width={16}
                       height={16}
+                      style={{
+                        opacity:
+                          `#${activeMenuItem}` === item.link ? '' : '0.3',
+                      }}
                     />
                   </div>
                 </div>
