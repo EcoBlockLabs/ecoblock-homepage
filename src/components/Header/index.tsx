@@ -16,9 +16,9 @@ interface IHeaderProps {
 const Header: React.FC<IHeaderProps> = ({ activeMenuItem }) => {
   const router = useRouter();
   const { lang } = useTranslation();
-  const { pathname, query } = router;
+  const { pathname } = router;
   const changeLanguage = (newLang: string) => {
-    router.push(pathname, pathname + query, { locale: newLang });
+    router.push(pathname, pathname, { locale: newLang });
   };
 
   useEffect(() => {
