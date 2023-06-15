@@ -5,19 +5,19 @@ import useTranslation from 'next-translate/useTranslation';
 const ExploreEcoBlock: React.FC = () => {
   const exploreItems = [
     {
-      image: 'get_starts',
+      image: 'get_starts.png',
       title: 'get_starts',
       content: 'content_start',
       link: 'https://docs.ecoblock.tech/?fbclid=IwAR3zINPe9A_F2IpKKX17mIdm2c2ps_YJo9v6eWKcvQsVhcB7ZmV-QJ_uf44',
     },
     {
-      image: 'ex_bridge',
+      image: 'ex_bridge.png',
       title: 'bridge',
       content: 'content_bridge',
       link: 'https://bridge.ecoblock.tech/?fbclid=IwAR06wiDj6XsDk33-w7se0SmkiTqFanLcpgkcyWm4dXouQ31ze6Lqcdn0mN0',
     },
     {
-      image: 'ex_faq',
+      image: 'ex_faq.png',
       title: 'faq',
       content: 'content_faq',
       link: 'https://docs.ecoblock.tech/faq?fbclid=IwAR3KZqAqZVmCzCqmAtgRuJAcTK0VyrV7OaK_LxVYv4pF1egqOmh8KlNR12U',
@@ -52,11 +52,11 @@ const ExploreEcoBlock: React.FC = () => {
               className="flex w-[70%] max-2xl:w-[90%] max-md:w-[100%] max-md:flex-col max-md:text-center mb-[40px] max-md:mb-[0]"
             >
               <div className="hidden headline w-[100%] max-md:flex max-md:mb-[20px]" />
-              <div className="min-w-[120px] mx-4">
+              <div className="min-w-[150px] mx-4">
                 <Image
-                  src={`/assets/images/${e.image}.svg`}
-                  width={120}
-                  height={120}
+                  src={`/assets/images/${e.image}`}
+                  width={150}
+                  height={150}
                 />
               </div>
               <div>

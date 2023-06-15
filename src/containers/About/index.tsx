@@ -24,7 +24,7 @@ const About: React.FC = () => {
       </div>
       <div className="flex w-full justify-center max-lg:max-w-[100%] max-w-[50%]">
         <Image
-          src="/assets/images/globe.svg"
+          src="/assets/images/globe.png"
           width={422}
           height={422}
           className="w-full"
