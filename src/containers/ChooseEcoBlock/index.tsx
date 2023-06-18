@@ -56,7 +56,7 @@ const ChooseEcoBlock: React.FC = () => {
             >
               <div className="absolute z-10 w-10 h-full bg-transparent left-[-4px] top-0" />
               <div>
-                <img src={`/assets/images/${e.image}.svg`} alt="icon" />
+                <img src={`/assets/images/${e.image}.png`} alt="icon" />
                 <div className="title text-white font-Antonio my-[20px]">
                   {t(e.name)}
                 </div>

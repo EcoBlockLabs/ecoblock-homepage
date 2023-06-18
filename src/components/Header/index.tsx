@@ -319,6 +319,9 @@ const Header: React.FC<IHeaderProps> = ({ activeMenuItem }) => {
               rgba(255, 255, 255, 0.1) 100%
             );
             backdrop-filter: blur(25px);
+             {
+              /* position: absolute; */
+            }
           }
         `}
       </style>

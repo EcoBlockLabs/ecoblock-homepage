@@ -35,6 +35,11 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
+
+.main {
+  position: relative;
+}
+
 #container {
   display: flex;
   flex-direction: column;
@@ -62,7 +67,7 @@ body {
 .zoom {
   background-color: rgba(64, 116, 207, 0.2);
   backdrop-filter: blur(50px);
-  transition: transform 1.2s;
+  transition: transform 1.3s;
   color: #f2f2f2;
   padding: 60px 50px;
   transform-origin: center center;
@@ -92,6 +97,7 @@ body {
   transform: scale(1.1);
   height: fit-content;
   padding: 60px 30px;
+  transition: transform 1.3s;
   transform-origin: center center;
 }
 
@@ -138,4 +144,31 @@ body {
 .list-item{
   display: flex !important;
   padding-bottom:16px;
+}
+
+@media only screen and (max-width: 1279px) {
+  html,
+body {
+  position: relative;
+  margin: 0;
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: default;
+  
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url('/assets/images/background.png');
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  overflow: scroll;
+}
 }

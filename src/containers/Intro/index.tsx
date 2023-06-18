@@ -77,7 +77,7 @@ const Intro: React.FC = () => {
       </div>
       <div className="flex w-full justify-center">
         <Image
-          src="/assets/images/section1.svg"
+          src="/assets/images/section1.png"
           width={440}
           height={440}
           // className="w-full"
