@@ -72,20 +72,30 @@ body {
   padding: 60px 50px;
   transform-origin: center center;
   margin:0;
+  min-height: 432px;
 }
 
 .zoom img {
   width: 80px;
   height: 80px;
   margin: 0 auto;
+  transition: transform 1.5s;
 }
 
 .title {
   font-size: 24px;
+  transition: font-size 1.5s;
+  transition: transform 1.5s;
 }
 
 .content {
   font-size: 14px;
+  transition: font-size 1.5s;
+  transition: transform 1.5s;
+}
+
+.zoom img {
+  transition: width 1.5s, height 1.5s;
 }
 
 .zoom:hover {
@@ -97,15 +107,8 @@ body {
   transform: scale(1.1);
   height: fit-content;
   padding: 60px 30px;
-  transition: transform 1.3s;
+  transition: transform 1.5s;
   transform-origin: center center;
-}
-
-.scale-card:hover {
-  -ms-transform: scale(1.1); /* IE 9 */
-  -webkit-transform: scale(1.1); /* Safari 3-8 */
-  transform: scale(1.1);
-  height: fit-content;
 }
 
 .zoom:hover img {
