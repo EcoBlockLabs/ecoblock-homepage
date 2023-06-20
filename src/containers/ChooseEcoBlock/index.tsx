@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import Image from 'next/image';
 import useTranslation from 'next-translate/useTranslation';
 
@@ -26,6 +28,40 @@ const ChooseEcoBlock: React.FC = () => {
       content: 'explore_evm',
     },
   ];
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1024);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (isMobile) return;
+
+    event.preventDefault();
+
+    const targetSectionId = event.currentTarget.getAttribute('href');
+    if (targetSectionId) {
+      const targetSection = document.querySelector(
+        targetSectionId
+      ) as HTMLElement;
+      if (targetSection) {
+        window.scrollTo({
+          top: targetSection.offsetTop,
+          behavior: 'smooth',
+        });
+      }
+    }
+  };
 
   return (
     <div className="w-full relative h-[100%] items-center justify-between max-xl:pb-[100px] pt-[100px] max-w-[1288px]">
@@ -69,6 +105,16 @@ const ChooseEcoBlock: React.FC = () => {
           );
         })}
       </div>
+      <a href="#explore" onClick={handleLinkClick}>
+        <button className="absolute bottom-0 left-[50%] btn-transform justify-center z-40 font-Antonio font-[18px] font-thin text-white">
+          <div>Explore EcoBlock</div>
+          <Image
+            src="/assets/images/icons/chevron_down_icon.png"
+            width={24}
+            height={24}
+          />
+        </button>
+      </a>
     </div>
   );
 };

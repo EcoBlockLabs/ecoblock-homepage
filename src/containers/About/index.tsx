@@ -1,8 +1,44 @@
+import { useEffect, useState } from 'react';
+
 import Image from 'next/image';
 import useTranslation from 'next-translate/useTranslation';
 
 const About: React.FC = () => {
   const { t } = useTranslation('home');
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1024);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (isMobile) return;
+
+    event.preventDefault();
+
+    const targetSectionId = event.currentTarget.getAttribute('href');
+    if (targetSectionId) {
+      const targetSection = document.querySelector(
+        targetSectionId
+      ) as HTMLElement;
+      if (targetSection) {
+        window.scrollTo({
+          top: targetSection.offsetTop,
+          behavior: 'smooth',
+        });
+      }
+    }
+  };
 
   return (
     <div className="flex relative w-full h-[100%] max-xl:pb-[120px] items-center max-xl:justify-center max-lg:flex-col-reverse justify-between flex-row-reverse">
@@ -30,6 +66,16 @@ const About: React.FC = () => {
           className="w-full"
         />
       </div>
+      <a href="#why" onClick={handleLinkClick} className="z-40">
+        <button className="absolute bottom-0 left-[50%] btn-transform justify-center z-40 font-Antonio font-[18px] font-thin text-white">
+          <div>Why choose EcoBlock</div>
+          <Image
+            src="/assets/images/icons/chevron_down_icon.png"
+            width={24}
+            height={24}
+          />
+        </button>
+      </a>
     </div>
   );
 };
