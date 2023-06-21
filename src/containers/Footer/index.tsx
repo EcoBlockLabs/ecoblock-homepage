@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import useTranslation from 'next-translate/useTranslation';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation('home');
   // const footer = [
   //   {
   //     name: 'Brigde',
@@ -53,7 +55,7 @@ const Footer: React.FC = () => {
         <div className="flex w-full mb-[55px] justify-between max-md:flex-col">
           <div className="max-md:justify-center flex-col">
             <div className="font-Antonio text-[36px] text-white font-bold">
-              Let’s Get in Touch
+              {t('let_is')}
             </div>
             <div className="w-[25px] h-[1px] bg-white max-md:m-auto mt-[13px]" />
           </div>
@@ -101,7 +103,7 @@ const Footer: React.FC = () => {
 
       <div className="flex w-full max-md:mt-[40px]">
         <div className="divider font-Poppins font-light text-[14px] max-sm:text-center">
-          © COPYRIGHT 2023 Ecoblock. ALL RIGHTS RESERVED
+          {t('coppy_right')}
         </div>
       </div>
       <style jsx>
