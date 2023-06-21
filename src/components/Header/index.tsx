@@ -16,6 +16,7 @@ interface IHeaderProps {
 const Header: React.FC<IHeaderProps> = ({ activeMenuItem }) => {
   const router = useRouter();
   const { lang } = useTranslation();
+  const { t } = useTranslation('home');
   const { pathname } = router;
   const changeLanguage = (newLang: string) => {
     router.push(pathname, pathname, { locale: newLang });
@@ -45,28 +46,28 @@ const Header: React.FC<IHeaderProps> = ({ activeMenuItem }) => {
   const listMenu = [
     {
       id: 0,
-      label: 'Introduction',
+      label: 'introduction',
       icon: '/assets/images/icons/chevron-right.svg',
       link: '#introduction',
       iconActive: '/assets/images/icons/chevron-right-empty.svg',
     },
     {
       id: 1,
-      label: 'What is EcoBlock',
+      label: 'what_is',
       icon: '/assets/images/icons/chevron-right.svg',
       link: '#about',
       iconActive: '/assets/images/icons/chevron-right-empty.svg',
     },
     {
       id: 2,
-      label: 'Why choose EcoBlock',
+      label: 'why_choose',
       icon: '/assets/images/icons/chevron-right.svg',
       link: '#why',
       iconActive: '/assets/images/icons/chevron-right-empty.svg',
     },
     {
       id: 3,
-      label: 'Explore EcoBlock',
+      label: 'eco_tile',
       icon: '/assets/images/icons/chevron-right.svg',
       link: '#explore',
       iconActive: '/assets/images/icons/chevron-right-empty.svg',
@@ -107,7 +108,7 @@ const Header: React.FC<IHeaderProps> = ({ activeMenuItem }) => {
                       opacity: `#${activeMenuItem}` === item.link ? '' : '0.3',
                     }}
                   >
-                    {item.label}
+                    {t(item.label)}
                   </div>
                   <div className="flex pt-[4px] justify-center">
                     <Image

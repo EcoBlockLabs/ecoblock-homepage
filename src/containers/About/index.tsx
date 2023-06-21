@@ -68,7 +68,7 @@ const About: React.FC = () => {
       </div>
       <a href="#why" onClick={handleLinkClick} className="z-40">
         <button className="absolute bottom-0 left-[50%] btn-transform justify-center z-40 font-Antonio font-[18px] font-thin text-white">
-          <div>Why choose EcoBlock</div>
+          <div>{t('why_choose')}</div>
           <Image
             src="/assets/images/icons/chevron_down_icon.png"
             width={24}
