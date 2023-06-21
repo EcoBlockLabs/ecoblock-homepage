@@ -235,12 +235,7 @@ const Header: React.FC<IHeaderProps> = ({ activeMenuItem }) => {
                 <div className="py-1 font-Inter font-normal ">
                   <Menu.Item>
                     {({ active }) => (
-                      <Link
-                        passHref
-                        href={
-                          'https://bridge.ecoblock.tech'
-                        }
-                      >
+                      <Link passHref href={'https://bridge.ecoblock.tech'}>
                         <a target="_blank" rel="noopener noreferrer">
                           <button
                             className={classNames(
@@ -258,12 +253,7 @@ const Header: React.FC<IHeaderProps> = ({ activeMenuItem }) => {
                   </Menu.Item>
                   <Menu.Item>
                     {({ active }) => (
-                      <Link
-                        passHref
-                        href={
-                          'https://ecoscan.io'
-                        }
-                      >
+                      <Link passHref href={'https://ecoscan.io'}>
                         <a target="_blank" rel="noopener noreferrer">
                           <button
                             className={classNames(
@@ -281,11 +271,7 @@ const Header: React.FC<IHeaderProps> = ({ activeMenuItem }) => {
                   </Menu.Item>
                   <Menu.Item>
                     {({ active }) => (
-                      <Link
-                        href={
-                          'https://docs.ecoblock.tech'
-                        }
-                      >
+                      <Link href={'https://docs.ecoblock.tech'}>
                         <a target="_blank" rel="noopener noreferrer">
                           <button
                             className={classNames(
