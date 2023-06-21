@@ -10,19 +10,19 @@ const ExploreEcoBlock: React.FC = () => {
       image: 'get_starts.png',
       title: 'get_starts',
       content: 'content_start',
-      link: 'https://docs.ecoblock.tech/?fbclid=IwAR3zINPe9A_F2IpKKX17mIdm2c2ps_YJo9v6eWKcvQsVhcB7ZmV-QJ_uf44',
+      link: 'https://docs.ecoblock.tech',
     },
     {
       image: 'ex_bridge.png',
       title: 'bridge',
       content: 'content_bridge',
-      link: 'https://bridge.ecoblock.tech/?fbclid=IwAR06wiDj6XsDk33-w7se0SmkiTqFanLcpgkcyWm4dXouQ31ze6Lqcdn0mN0',
+      link: 'https://bridge.ecoblock.tech',
     },
     {
       image: 'ex_faq.png',
       title: 'faq',
       content: 'content_faq',
-      link: 'https://docs.ecoblock.tech/faq?fbclid=IwAR3KZqAqZVmCzCqmAtgRuJAcTK0VyrV7OaK_LxVYv4pF1egqOmh8KlNR12U',
+      link: 'https://docs.ecoblock.tech/faq',
     },
   ];
   const { t } = useTranslation('home');

@@ -238,7 +238,7 @@ const Header: React.FC<IHeaderProps> = ({ activeMenuItem }) => {
                       <Link
                         passHref
                         href={
-                          'https://bridge.ecoblock.tech/?fbclid=IwAR06wiDj6XsDk33-w7se0SmkiTqFanLcpgkcyWm4dXouQ31ze6Lqcdn0mN0'
+                          'https://bridge.ecoblock.tech'
                         }
                       >
                         <a target="_blank" rel="noopener noreferrer">
@@ -261,7 +261,7 @@ const Header: React.FC<IHeaderProps> = ({ activeMenuItem }) => {
                       <Link
                         passHref
                         href={
-                          'https://ecoscan.io/?fbclid=IwAR0QE54HG5QCUGa0rfo0CG5VKu82e_FxZY2IX_jfBcuE8p-A-xNXL1RTItU'
+                          'https://ecoscan.io'
                         }
                       >
                         <a target="_blank" rel="noopener noreferrer">
@@ -283,7 +283,7 @@ const Header: React.FC<IHeaderProps> = ({ activeMenuItem }) => {
                     {({ active }) => (
                       <Link
                         href={
-                          'https://docs.ecoblock.tech/?fbclid=IwAR3KJVZmXKkPEn6pdi0m6xJ8imIVdKSaNh3tdnxE_U6YGyZMGjKV-Tdgv-Q'
+                          'https://docs.ecoblock.tech'
                         }
                       >
                         <a target="_blank" rel="noopener noreferrer">

@@ -58,7 +58,7 @@ const Intro: React.FC = () => {
           {t('intro_eco')}
         </div>
         <div className="flex pt-5 gap-4 flex-row max-md:flex-col max-md:w-full">
-          <Link href="https://docs.ecoblock.tech/?fbclid=IwAR31IhV-1f5SPbpk0aofbiN3KXWy5_G5XHoshDZhMychDH776HqfMt-bWOQ">
+          <Link href="https://docs.ecoblock.tech">
             <button className="primary-button max-md:justify-center font-medium  flex font-Poppins gap-2 text-[#FFFEFE] bg-primary-300 rounded-xl py-3 px-5">
               <a target="_blank" rel="noopener noreferrer">
                 {t('build_your_app')}
@@ -87,7 +87,7 @@ const Intro: React.FC = () => {
               </svg>
             </button>
           </Link>
-          <Link href="https://bridge.ecoblock.tech/?fbclid=IwAR06wiDj6XsDk33-w7se0SmkiTqFanLcpgkcyWm4dXouQ31ze6Lqcdn0mN0">
+          <Link href="https://bridge.ecoblock.tech">
             <button className="secondary-button max-md:justify-center font-medium flex font-Poppins gap-2 text-primary-300 bg-white rounded-xl py-3 px-5">
               <a target="_blank" rel="noopener noreferrer">
                 {t('bridge_to_eco')}
