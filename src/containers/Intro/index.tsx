@@ -42,7 +42,7 @@ const Intro: React.FC = () => {
 
   return (
     <div className="flex w-full h-[100%] relative max-xl:pb-[140px] max-xl:w-fit max-lg:flex-col-reverse max-xl:justify-center items-center justify-between">
-      <div className="flex w-full flex-col items-start justify-start space-y-4 max-xl:mt-12">
+      <div className="flex w-full flex-col items-start justify-start space-y-4 max-sm:space-y-2 max-sm:mt-2 max-xl:mt-12">
         <div className="flex max-md:w-full max-md:justify-center">
           <Image
             src="/assets/images/icons/triagle.svg"
@@ -111,12 +111,13 @@ const Intro: React.FC = () => {
         </div>
       </div>
       <div className="flex w-full justify-center">
-        <Image
-          src="/assets/images/section1-min.png"
-          width={440}
-          height={440}
-          // className="w-full"
-        />
+        <div className="max-sm:w-[75%]">
+          <Image
+            src="/assets/images/section1-min.png"
+            width={440}
+            height={440}
+          />
+        </div>
       </div>
       <a href="#about" onClick={handleLinkClick}>
         <button className="absolute bottom-0 left-[50%] btn-transform justify-center z-40 font-Antonio font-[18px] font-thin text-white">
